@@ -2,7 +2,7 @@
 #include <string.h>
 #include "list.h"
 
-void listInit(Linked * list,void (*destory)(void * data)){
+void linkedInit(Linked * list,void (*destory)(void * data)){
     list->size=0;
     list->head=NULL;
     list->tail=NULL;
@@ -21,7 +21,7 @@ void linkedDestory(Linked * list){
     memset(list,0,sizeof(Linked));
 }
 
-int listAdd(Linked * list,Element * element,const void * data){
+int linkedAdd(Linked * list,Element * element,const void * data){
     Element * newElement;
     //分配内存给新的元素，如果失败则直接返回-1
     if((newElement=(Element *)malloc(sizeof(Element)))==NULL){

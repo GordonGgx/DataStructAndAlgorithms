@@ -29,7 +29,7 @@ typedef struct List_{
 /*初始化由l参数ist指定的链表，该函数必须在链表做其他操作之前调用。当调用linkedDestory时，destory参数提供了一种释放动态分配的数据的方法，例如如果链表中包含
 采用malloc动态分配的数据，当链表被销毁时，destory应该设置为free用来释放数据。对于包含了好几个动态分配成员的结构化数据，destory应该设置为一个用户自定义的析够函数，用过
 对每一个动态分配成员以及对结构体自身调用free来释放数据。如果链表包含不应该释放的数据，destory函数应该设置为null*/
-void listInit(Linked * list,void (*destory)(void * data));
+void linkedInit(Linked * list,void (*destory)(void * data));
 
 /*销毁有参数list指定的链表。调用该函数后任何其他的操作都不允许执行，除非再次调用init，linkeddestory将链表中所有元素都移除，如果传給init的参数destory不为null，则移除每个元素的时候
 都应该调用destory函数*/
@@ -37,7 +37,7 @@ void linkedDestory(Linked * list);
 
 /*在list指定的链表element后面插入一个新元素。如果element设置为null，则新元素插入链表头部，新元素包含一个指向data的指针，因此只要该元素还在链表中，data所引用的空间就应该保持合法
 。管理data所引用的存储空间是调用者的责任*/
-int listAdd(Linked * list,Element * element,const void * data);
+int linkedAdd(Linked * list,Element * element,const void * data);
 //追加新元素到链表末尾
 int linkedAppend(Linked * list,const void * data);
 
