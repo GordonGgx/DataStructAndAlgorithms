@@ -1,8 +1,9 @@
 #include <stdio.h>
-#include "list.h"
+#include "linked.h"
 int main() {
 	Linked list;
 	linkedInit(&list,NULL);
+	linkedAppend(&list,"uuu");
 	linkedAppend(&list,"ggx");
 	linkedAppend(&list,"xtt");
 	linkedAppend(&list,"xll");

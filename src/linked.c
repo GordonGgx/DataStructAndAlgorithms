@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-#include "list.h"
+#include "linked.h"
 
 void linkedInit(Linked * list,void (*destory)(void * data)){
     list->size=0;

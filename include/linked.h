@@ -1,5 +1,5 @@
-#ifndef LIST_H
-#define LIST_H
+#ifndef LINKED_H
+#define LINKED_H
 #include <stdio.h>
 
 /*定义链表元素结构*/
