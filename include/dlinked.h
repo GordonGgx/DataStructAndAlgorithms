@@ -1,6 +1,6 @@
 #ifndef DLINKED_H
 #define DLINKED_H
-typedef struct
+typedef struct Node_
 {   
     //元素所存储的数据
     void *data;
@@ -10,7 +10,7 @@ typedef struct
     Node * next;
 } Node;
 
-typedef struct
+typedef struct DLinked_
 {
     //链表长度
     int size;
@@ -26,7 +26,7 @@ void dlinked_init(DLinked * list,void (*destory)(void *data));
 void dlinked_destory(DLinked * list);
 int dlinked_add_next(DLinked * list,Node * node,const void * data);
 int dlinked_add_prev(DLinked * list,Node * node,const void * data);
-int dlinked_remove(DLinked * list,Node * node,void * data);
+int dlinked_remove(DLinked * list,Node * node,void ** data);
 
 #define getSize(list) ((list)->size)
 #define getTail(list) ((list)->tail)

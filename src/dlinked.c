@@ -73,3 +73,31 @@ int dlinked_add_prev(DLinked * list,Node * node,const void * data){
     list->size++;
     return 1;
 }
+
+int dlinked_remove(DLinked * list,Node * node,void ** data){
+    if(node==NULL||getSize(list)==0){
+        return -1;
+    }
+    //从链表中移除元素
+    *data=node->data;
+    if(node==list->head){
+        //将元素从链表头部移除
+        list->head=node->next;
+        if(list->head=NULL){
+            list->tail=NULL;
+        }else{
+            node->next->previous=NULL;
+        }
+    }else{
+        //将链表从其他部分移除
+        node->previous->next=node->next;
+        if(node->next=NULL){
+            list->tail=node->previous;
+        }else{
+            node->next->previous=node->previous;
+        }
+    }
+    free(node);
+    list->size--;
+    return 0;
+}

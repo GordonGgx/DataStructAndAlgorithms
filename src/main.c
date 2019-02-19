@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "linked.h"
-int main() {
+#include "dlinked.h"
+void testLinked(){
 	Linked list;
 	linkedInit(&list,NULL);
 	linkedAppend(&list,"uuu");
@@ -24,5 +25,15 @@ int main() {
 	}
 	
 	linkedDestory(&list);
+}
+
+void testDLinked(){
+	DLinked dlinked;
+	dlinked_init(&dlinked,NULL);
+
+}
+int main() {
+	// testLinked();
+	testDLinked();
 	getchar();
 }
