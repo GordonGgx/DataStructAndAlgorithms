@@ -11,7 +11,7 @@ void linkedInit(Linked * list,void (*destory)(void * data)){
 
 void linkedDestory(Linked * list){
     void * data;
-    while(size(list)>0){
+    while(getSize(list)>0){
         if(listRemove(list,NULL,(void **)&data)==0 && 
             list->destory!=NULL){
                 list->destory(data);
@@ -32,7 +32,7 @@ int linkedAdd(Linked * list,Element * element,const void * data){
     if(element==NULL){
         //新元素添加到链表头部
         //如果当前列表元素数量为0则链表末尾元素就是头元素
-        if (size(list)==0) {
+        if (getSize(list)==0) {
             list->tail==newElement;
         }
         //将新元素的下一个元素指向旧列表中的首位元素
@@ -62,7 +62,7 @@ int linkedAppend(Linked * list,const void * data){
     }
     //插入新元素到Linked中
     newElement->data=data;
-    if(size(list)==0){
+    if(getSize(list)==0){
         list->tail=newElement;
         newElement->next=NULL;
         list->head=newElement;
@@ -80,7 +80,7 @@ int linkedAppend(Linked * list,const void * data){
 int listRemove(Linked *list,Element * element,void * data){
     Element * oldElement;
     //不允许从空元素中移除
-    if(size(list)==0){
+    if(getSize(list)==0){
         return -1;
     }
     //从链表中移除元素

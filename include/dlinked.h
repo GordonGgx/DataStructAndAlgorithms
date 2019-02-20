@@ -28,13 +28,13 @@ int dlinked_add_next(DLinked * list,Node * node,const void * data);
 int dlinked_add_prev(DLinked * list,Node * node,const void * data);
 int dlinked_remove(DLinked * list,Node * node,void ** data);
 
-#define getSize(list) ((list)->size)
-#define getTail(list) ((list)->tail)
-#define getHead(list) ((list)->head)
-#define isHead(node) ((node)->previous==NULL?1:0)
-#define isTail(node) ((node)->next==NULL?1:0)
-#define isEmpty(list) ((list)->size==0?1:0);
-#define getData(node) ((node)->data)
-#define getNext(node) ((node)->next)
-#define getPrevious(node) ((node)->previous)
+#define dlinked_getSize(dlist) ((dlist)->size)
+#define dlinked_getTail(list) ((list)->tail)
+#define dlinked_getHead(list) ((list)->head)
+#define dlinked_isHead(node) ((node)->previous==NULL?1:0)
+#define dlinked_isTail(node) ((node)->next==NULL?1:0)
+#define dlinked_isEmpty(list) ((list)->size==0?1:0);
+#define dlinked_getData(node) ((node)->data)
+#define dlinked_getNext(node) ((node)->next)
+#define dlinked_getPrevious(node) ((node)->previous)
 #endif

@@ -45,7 +45,7 @@ int linkedAppend(Linked * list,const void * data);
 int listRemove(Linked *list,Element * element,void * data);
 
 
-#define size(list) ((list)->size)
+#define getSize(list) ((list)->size)
 #define getHead(list) ((list)->head)
 #define getTail(list) ((list)->tail)
 #define isHead(list,element) ((element)==(list)->head?1:0)

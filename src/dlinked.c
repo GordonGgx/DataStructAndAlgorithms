@@ -11,7 +11,7 @@ void dlinked_init(DLinked * list,void (*destory)(void *data)){
 
 void dlinked_destory(DLinked * list){
     void* data;
-    while(getSize(list)>0){
+    while(dlinked_getSize(list)>0){
         if(dlinked_remove(list,NULL,data)==0&&list->destory!=NULL){
             list->destory(data);
         }
@@ -27,7 +27,7 @@ int dlinked_add_next(DLinked * list,Node * node,const void * data){
     newNode->data=data;
     if(node==NULL){
         //如果是空链表则头就是尾
-        if(getSize(list)==0){
+        if(dlinked_getSize(list)==0){
             list->tail=newNode;
         }
         list->head=newNode;
@@ -47,14 +47,14 @@ int dlinked_add_next(DLinked * list,Node * node,const void * data){
 }
 
 int dlinked_add_prev(DLinked * list,Node * node,const void * data){
-    if(getSize(list)!=0&&node==NULL){
+    if(dlinked_getSize(list)!=0&&node==NULL){
         return -1;
     }
     Node * newNode=(Node*)malloc(sizeof(Node));
     if(newNode==NULL){
         return -1;
     }
-    if(getSize(list)==0){
+    if(dlinked_getSize(list)==0){
         //如果是空链表则添加到头部
         list->head=newNode;
         list->head->previous=NULL;
@@ -75,7 +75,7 @@ int dlinked_add_prev(DLinked * list,Node * node,const void * data){
 }
 
 int dlinked_remove(DLinked * list,Node * node,void ** data){
-    if(node==NULL||getSize(list)==0){
+    if(node==NULL||dlinked_getSize(list)==0){
         return -1;
     }
     //从链表中移除元素

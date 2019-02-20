@@ -3,6 +3,7 @@
         "stdio.h": "c",
         "list.h": "c",
         "string.h": "c",
-        "linked.h": "c"
+        "linked.h": "c",
+        "dlinked.h": "c"
     }
 }
