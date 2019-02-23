@@ -5,9 +5,9 @@ typedef struct Node_
     //元素所存储的数据
     void *data;
     //当前元素指向上一个元素的地址
-    Node * previous;
+    struct Node_ * previous;
     //当前元素指向下一个元素的地址
-    Node * next;
+    struct Node_ * next;
 } Node;
 
 typedef struct DLinked_

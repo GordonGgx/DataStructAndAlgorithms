@@ -32,7 +32,7 @@ void testDLinked(){
 
 }
 int main() {
-	// testLinked();
-	testDLinked();
+	testLinked();
+	// testDLinked();
 	getchar();
 }
